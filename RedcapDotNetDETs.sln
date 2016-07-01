@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDETs", "DotNetDETs\DotNetDETs.csproj", "{2DC8D92B-A930-493F-8027-497C29653931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDETUnitTests", "DotNetDETUnitTests\DotNetDETUnitTests.csproj", "{8C6AA9C1-FD5C-404D-8223-19E71DE5EAAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DC8D92B-A930-493F-8027-497C29653931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC8D92B-A930-493F-8027-497C29653931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC8D92B-A930-493F-8027-497C29653931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC8D92B-A930-493F-8027-497C29653931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C6AA9C1-FD5C-404D-8223-19E71DE5EAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C6AA9C1-FD5C-404D-8223-19E71DE5EAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C6AA9C1-FD5C-404D-8223-19E71DE5EAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C6AA9C1-FD5C-404D-8223-19E71DE5EAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
