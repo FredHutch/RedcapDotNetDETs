@@ -26,7 +26,7 @@ namespace DotNetDETs.Controllers
         public AdaptiveController()
         {
             // Normal invocation which pulls token out of web.config.
-            this.token = WebConfigurationManager.AppSettings["PalsToken"].ToString();
+            this.token = WebConfigurationManager.AppSettings["AdaptiveProjectToken"].ToString();
         }
 
         public AdaptiveController(string token, string uri)
@@ -37,7 +37,7 @@ namespace DotNetDETs.Controllers
             this.uri = uri;
         }
 
-        // POST api/pals
+        // POST https://your-domain/api/AdaptiveProject
         public HttpResponseMessage Post([ModelBinder(typeof(RedcapDETModelBinderProvider))] RedcapDET redcapDet)
         {
             RedcapAccess rc;

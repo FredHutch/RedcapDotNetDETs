@@ -14,7 +14,7 @@ namespace DotNetDETs.Controllers
         private string token = WebConfigurationManager.AppSettings["DETExampleProjectToken"].ToString();
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        // POST api/cocoa
+        // POST https://your-domain/api/DETExampleProject
         public void Post([ModelBinder(typeof(RedcapDETModelBinderProvider))] RedcapDET redcapDet)
         {
             RedcapAccess rc = new RedcapAccess();
