@@ -170,6 +170,9 @@ namespace DotNetDETs.Controllers
                         // Special case of no previous records for this combination of covariates
                         Random rnd = new Random(int.Parse(triggerRecord) + DateTime.Now.Millisecond);
                         Log.Info("Zero prior subjects with this set of covariates.");
+                        // This will generate a random integer number greater than or equal to 0 and 
+                        // strictly less than weights.GetLength(0).
+                        // If there are only two treatment arms, it will select a random integer between 0 and 1.
                         newAssignment = rnd.Next(0, weights.GetLength(0));
                         Log.InfoFormat("Randomly assigned participant {0} to arm {1}.", triggerRecord,  newAssignment);
                     }
