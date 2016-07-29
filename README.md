@@ -27,9 +27,10 @@ This allows you to quickly randomize a bunch of subjects to see if the adaptive 
 The common code is used to parse the posted values passed to the DET by REDCap. It also contains routines to read and write records to REDCap.
 
 ##REDCap Hook used to integrate Adaptive Randomization into data form
-Here is the hook code used to create a **Randomize** button on our randomizatin form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework).
+Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework).
 ```
 <?php
+	// Saved to a file named redcap_data_entry_form.php and placed in the hooks folder for the appropriate project
 	switch ($instrument) {
 
         case "randomization":
