@@ -35,7 +35,7 @@ The common code is used to parse the posted values passed to the DET by REDCap. 
 *(Much more details to come!)*
 
 ##REDCap Hook used to integrate Adaptive Randomization into data form
-Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework).
+Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework). *This PHP code shown here is not included in the source of this .NET project.*
 ```
 <?php
 	// Saved to a file named redcap_data_entry_form.php and placed in the hooks folder for the appropriate project
