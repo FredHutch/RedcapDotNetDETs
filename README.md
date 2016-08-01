@@ -30,7 +30,7 @@ This allows you to quickly randomize a bunch of subjects to see if the adaptive 
 *(More details to come!)*
 
 ##Common Code
-The common code is used to parse the posted values passed to the DET by REDCap. It also contains routines to read and write records to REDCap.
+The common code is used to parse the posted values passed to the DET by REDCap. It also contains routines to read and write records to REDCap. The REDCap API code was adapted from the work of [Chris Nefcy](https://github.com/redcap-tools/nef-c-sharp).
 
 *(Much more details to come!)*
 
