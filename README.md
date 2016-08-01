@@ -7,7 +7,7 @@ Basic attributes of this project:
 - Created with Visual Studio 2015.
 - .NET version: 4.5.2
 - Built as an ASP.NET WebAPI web service
-- Uses Log4Net
+- Uses Log4Net for logging
 - Includes unit test for Adaptive randomization code
 - Extensive comments in source code
 
