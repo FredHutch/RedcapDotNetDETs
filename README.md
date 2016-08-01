@@ -7,6 +7,9 @@ Basic attributes of this project:
 - Created with Visual Studio 2015.
 - .NET version: 4.5.2
 - Built as an ASP.NET WebAPI web service
+- Uses Log4Net
+- Includes unit test for Adaptive randomization code
+- Extensive comments in source code
 
 ###This solution contains two WebAPI endpoints
 - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
