@@ -2,7 +2,7 @@
 > Created by Paul Litwin, [Collaborative Data Services](http://cds.fredhutch.org), Fred Hutchinson Cancer Reseach Center, Seattle
 
 ## Description
-This project is a .NET implementation of a set of [REDCap](https://projectredcap.org) Data Entry Triggers.
+A Microsoft .NET-based implementation of a set of [REDCap](https://projectredcap.org) Data Entry Triggers.
 Basic attributes of this project:
 - Created with Visual Studio 2015.
 - .NET version: 4.5.2.
