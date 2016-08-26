@@ -17,6 +17,7 @@ Basic attributes of this project:
 - **DatabasedNotify** - a .NET data entry trigger that reacts to a saved survey and then, based on the value
 of a field on the survey, adds the record to the appropriate data access group and emails the
 appropriate site contact.
+
 *See additional details of each endpoint below.*
 
 ##DETExample
