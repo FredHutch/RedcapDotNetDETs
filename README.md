@@ -5,11 +5,11 @@
 This project is a .NET implementation of a set of [REDCap](https://projectredcap.org) Data Entry Triggers.
 Basic attributes of this project:
 - Created with Visual Studio 2015.
-- .NET version: 4.5.2
+- .NET version: 4.5.2.
 - Built as an ASP.NET WebAPI web service using C# programing language.
-- Uses Log4Net for logging
-- Includes unit test for Adaptive randomization code
-- Extensive comments in source code
+- Uses Log4Net for logging.
+- Includes unit test for Adaptive randomization code.
+- Extensive comments in source code.
 
 ###This solution contains two projects
 - **DotNetDETs** - This is the main project containing three WebAPI endpoints: 
