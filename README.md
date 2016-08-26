@@ -26,8 +26,8 @@ This is basic example of a data entry trigger built in asp.net as a WebAPI web s
 ##Adaptive
 This REDCap DET implements Adaptive Randomization per Smoak and Lin 
 <http://www2.sas.com/proceedings/sugi26/p242-26.pdf>.
-- One difference from the Smoak and Lin paper is that there is no run-in of simple randomization as mentioned in the paper. Instead, only the first assignment for each covariate group is randomly assigned using simple randomization. Thereafter, all subjects in that group are randomized using adaptive randomization.
-- 
+One difference from the Smoak and Lin paper is that there is no run-in of simple randomization as mentioned in the paper. Instead, only the first assignment for each covariate group is randomly assigned using simple randomization. Thereafter, all subjects in that group are randomized using adaptive randomization.
+
 ##REDCap Hook used to integrate Adaptive Randomization into data form
 Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework). *This PHP code shown here is not included in the source of this .NET project.*
 ```
