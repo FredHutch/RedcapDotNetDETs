@@ -53,17 +53,17 @@ Here is the hook code used to create a **Randomize Participant** button on our r
 The DotNetDETUnitTests unit test project allows you to quickly randomize a bunch of subjects to see if the adaptive randomization routine is working properly.
 
 ##DatabasedNotify Endpoint
-Performs two actions based on the value of the cityField field:
+Performs two actions based on the value of the *cityField* field:
  1. Adds form to appropriate data access group (DAG) based on city.
  2. Notifies appropriate contact at the site for that city.
 
-Note: The DatabasedNotifyEmailsTestMode config setting of true diverts all emails to 
+Note: The *DatabasedNotifyEmailsTestMode* config setting of true diverts all emails to 
 test recipient. Need to set to false when in production.
 
 ##Common Code
 The common code under the Infrastructure folder consists of the following classes:
- 1. RedCapDETBModelBinder.cs is used to parse the posted values passed to the DET by REDCap. 
- 2. RedCapAccess.cs contains routines to read and write records to REDCap. The REDCap API code was adapted from the work of [Chris Nefcy](https://github.com/redcap-tools/nef-c-sharp).
- 3. Metadata.cs is a class used to store the metadata (data dictionary) from the ExportMetadata API call.
- 4. Messaging is used to send asynchronous emails.
+ 1. **RedCapDETBModelBinder.cs** is used to parse the posted values passed to the DET by REDCap. 
+ 2. **RedCapAccess.cs** contains routines to read and write records to REDCap. The REDCap API code was adapted from the work of [Chris Nefcy](https://github.com/redcap-tools/nef-c-sharp).
+ 3. **Metadata.cs** is a class used to store the metadata (data dictionary) from the ExportMetadata API call.
+ 4. **Messaging.cs** is used to send asynchronous emails.
 
