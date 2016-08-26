@@ -10,13 +10,20 @@ using System.Net.Http;
 
 namespace DotNetDETs.Controllers
 {
-    // This REDCap DET implements Adaptive Randomization per Smoak and Lin
-    // from http://www2.sas.com/proceedings/sugi26/p242-26.pdf
-    // One difference is there is no run-in of simple randomization as mentioned
-    // in the paper. Instead, only the first assignment for each covariate group is
-    // randomly assigned using simple randomization. Thereafter, all subjects in that 
-    // group are randomized using adaptive randomization.
-
+    /*
+     * ADAPTIVE DATA ENTRY TRIGGER
+     * REDCAP PROJECT:  AdaptiveProject
+     * AUTHOR:          Paul Litwin
+     * WHEN TRIGGERED:  The randomization form is saved, subject is eligible, and not previously randomized.
+     * ACTION:          Subject is randomized using Adaptive Randomization per Smoak and Lin.
+     *                  from http://www2.sas.com/proceedings/sugi26/p242-26.pdf.
+     *                  One difference is there is no run-in of simple randomization as mentioned
+     *                  in the paper. Instead, only the first assignment for each covariate group is
+     *                  randomly assigned using simple randomization. Thereafter, all subjects in that 
+     *                  group are randomized using adaptive randomization.
+     * UPDATE HISTORY:  08/26/15 - Added this comment header.
+     * 
+    */
     public class AdaptiveController : ApiController
     {
         private string token;

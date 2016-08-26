@@ -9,6 +9,15 @@ using Newtonsoft.Json;
 
 namespace DotNetDETs.Controllers
 {
+    /*
+     * EXAMPLE TEMPLATE DATA ENTRY TRIGGER
+     * REDCAP PROJECT:  none
+     * AUTHOR:          Paul Litwin
+     * WHEN TRIGGERED:  Nothing. 
+     * ACTION:          Nothing.
+     * UPDATE HISTORY:  08/26/15 - Added this comment header.
+     * 
+    */
     public class DETExampleController : ApiController
     {
         private string token = WebConfigurationManager.AppSettings["DETExampleProjectToken"].ToString();

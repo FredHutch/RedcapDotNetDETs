@@ -167,10 +167,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AdaptiveController.cs" />
+    <Compile Include="Controllers\DatabasedNotifyController.cs" />
     <Compile Include="Controllers\DETExampleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Messaging.cs" />
     <Compile Include="Infrastructure\Metadata.cs" />
     <Compile Include="Infrastructure\RedcapAccess.cs" />
     <Compile Include="Infrastructure\RedcapDETModelBinder.cs" />
