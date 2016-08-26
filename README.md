@@ -7,6 +7,9 @@ Basic attributes of this project:
 - Created with Visual Studio 2015.
 - .NET version: 4.5.2
 - Built as an ASP.NET WebAPI web service
+- Uses Log4Net for logging
+- Includes unit test for Adaptive randomization code
+- Extensive comments in source code
 
 ###This solution contains two WebAPI endpoints
 - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
@@ -14,22 +17,31 @@ Basic attributes of this project:
 *See additional details of each endpoint below.*
 
 ##DETExample
-This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses [common code].
+This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses common code (see below).
+
+*(More details to come)*
 
 ##Adaptive
 This REDCap DET implements Adaptive Randomization per Smoak and Lin <http://www2.sas.com/proceedings/sugi26/p242-26.pdf>.
 - One difference from the Smoak and Lin paper is that there is no run-in of simple randomization as mentioned in the paper. Instead, only the first assignment for each covariate group is randomly assigned using simple randomization. Thereafter, all subjects in that group are randomized using adaptive randomization.
 
+*(Much more detail to come!)*
+
 ##Unit Test for the Adaptive randomization code
 This allows you to quickly randomize a bunch of subjects to see if the adaptive randomization routine is working properly.
 
+*(More details to come!)*
+
 ##Common Code
-The common code is used to parse the posted values passed to the DET by REDCap. It also contains routines to read and write records to REDCap.
+The common code is used to parse the posted values passed to the DET by REDCap. It also contains routines to read and write records to REDCap. The REDCap API code was adapted from the work of [Chris Nefcy](https://github.com/redcap-tools/nef-c-sharp).
+
+*(Much more details to come!)*
 
 ##REDCap Hook used to integrate Adaptive Randomization into data form
-Here is the hook code used to create a **Randomize** button on our randomizatin form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework).
+Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework). *This PHP code shown here is not included in the source of this .NET project.*
 ```
 <?php
+	// Saved to a file named redcap_data_entry_form.php and placed in the hooks folder for the appropriate project
 	switch ($instrument) {
 
         case "randomization":
