@@ -30,7 +30,7 @@ This REDCap DET implements Adaptive Randomization per Smoak and Lin
 
 ##DatabasedNotify
 Performs two actions based on the value of the cityField field:
-1. Adds form to appropriate data access group (DAG) based on city.
+ 1. Adds form to appropriate data access group (DAG) based on city.
 2. Notifies appropriate contact at the site for that city.
 
 Note: The DatabasedNotifyEmailsTestMode config setting of true diverts all emails to 
