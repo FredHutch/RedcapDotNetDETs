@@ -47,7 +47,7 @@ Here is the hook code used to create a **Randomize Participant** button on our r
 ```
 
 ###Unit Test for the Adaptive randomization code
-This unit test project allows you to quickly randomize a bunch of subjects to see if the adaptive randomization routine is working properly.
+The DotNetDETUnitTests unit test project allows you to quickly randomize a bunch of subjects to see if the adaptive randomization routine is working properly.
 
 ##DatabasedNotify Endpoint
 Performs two actions based on the value of the cityField field:
