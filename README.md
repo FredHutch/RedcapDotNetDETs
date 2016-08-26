@@ -23,10 +23,9 @@ appropriate site contact.
 ##DETExample
 This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses common code (see below).
 
-*(More details to come)*
-
 ##Adaptive
-This REDCap DET implements Adaptive Randomization per Smoak and Lin <http://www2.sas.com/proceedings/sugi26/p242-26.pdf>.
+This REDCap DET implements Adaptive Randomization per Smoak and Lin 
+<http://www2.sas.com/proceedings/sugi26/p242-26.pdf>.
 - One difference from the Smoak and Lin paper is that there is no run-in of simple randomization as mentioned in the paper. Instead, only the first assignment for each covariate group is randomly assigned using simple randomization. Thereafter, all subjects in that group are randomized using adaptive randomization.
 
 ##DatabasedNotify
