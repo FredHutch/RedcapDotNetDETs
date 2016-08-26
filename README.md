@@ -11,14 +11,14 @@ Basic attributes of this project:
 - Includes unit test for Adaptive randomization code
 - Extensive comments in source code
 
-###This solution contains three WebAPI endpoints
-- **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
-- **Adaptive** - a .NET data entry trigger that implements **Adaptive Randomization** in REDCap. Implemented using class  DotNetDETs/Controllers/AdaptiveController.cs.
-- **DatabasedNotify** - a .NET data entry trigger that reacts to a saved survey and then, based on the value
+###This solution contains two projects
+- **DotNetDETs** - This is the main project containing three WebAPI endpoints: 
+ - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
+ - **Adaptive** - a .NET data entry trigger that implements **Adaptive Randomization** in REDCap. Implemented using class  DotNetDETs/Controllers/AdaptiveController.cs.
+ - **DatabasedNotify** - a .NET data entry trigger that reacts to a saved survey and then, based on the value
 of a field on the survey, adds the record to the appropriate data access group and emails the
 appropriate site contact.
-
-*See additional details of each endpoint below.*
+- **DotNetDETUnitTests** - This is a unit test project for testing the Adaptive Randomization code.
 
 ##DETExample Endpoint
 This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses common code (see below).
