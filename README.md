@@ -20,6 +20,9 @@ of a field on the survey, adds the record to the appropriate data access group a
 appropriate site contact.
 - **DotNetDETUnitTests** - This is a unit test project for testing the Adaptive Randomization code.
 
+
+A description of each of the endpoints and supporting code follows...
+
 ##DETExample Endpoint
 This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses common code (see below).
 
