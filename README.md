@@ -10,7 +10,7 @@ A Microsoft .NET-based implementation of a set of [REDCap](https://projectredcap
 - Includes unit test for Adaptive randomization code.
 - Extensive comments in source code.
 
-## Update History
+### Update History
 - 19-June-2017 - Added support for repeating instruments by adding 2 new properties to the RedcapDET class (redcap_repeat_instrument and redcap_repeat_instance). These properties will only be filled by REDCap when the DET is triggered from a repeating instrument.
 
 ### This solution contains two projects
