@@ -10,7 +10,10 @@ A Microsoft .NET-based implementation of a set of [REDCap](https://projectredcap
 - Includes unit test for Adaptive randomization code.
 - Extensive comments in source code.
 
-###This solution contains two projects
+## Update History
+- 19-June-2017 - Added support for repeating instruments by adding 2 new properties to the RedcapDET class (redcap_repeat_instrument and redcap_repeat_instance). These properties will only be filled by REDCap when the DET is triggered from a repeating instrument.
+
+### This solution contains two projects
 - **DotNetDETs** - This is the main project containing three WebAPI endpoints: 
  - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
  - **Adaptive** - a .NET data entry trigger that implements **Adaptive Randomization** in REDCap. Implemented using class  DotNetDETs/Controllers/AdaptiveController.cs.
@@ -22,15 +25,15 @@ appropriate site contact.
 
 A description of each of the endpoints and supporting code follows...
 
-##DETExample Endpoint
+## DETExample Endpoint
 This is basic example of a data entry trigger built in asp.net as a WebAPI web service. It uses common code (see below).
 
-##Adaptive Endpoint
+## Adaptive Endpoint
 This REDCap DET implements Adaptive Randomization per Smoak and Lin 
 <http://www2.sas.com/proceedings/sugi26/p242-26.pdf>.
 One difference from the Smoak and Lin paper is that there is no run-in of simple randomization as mentioned in the paper. Instead, only the first assignment for each covariate group is randomly assigned using simple randomization. Thereafter, all subjects in that group are randomized using adaptive randomization.
 
-###REDCap Hook used to integrate Adaptive Randomization into data form
+### REDCap Hook used to integrate Adaptive Randomization into data form
 Here is the hook code used to create a **Randomize Participant** button on our randomization form which mimics the Save and Continue button on a REDCap form. It uses the [Andy Martin REDCap Hook Framework](https://github.com/123andy/redcap-hook-framework). *This PHP code shown here is not included in the source of this .NET project.*
 ```
 <?php
@@ -48,10 +51,10 @@ Here is the hook code used to create a **Randomize Participant** button on our r
 ?>
 ```
 
-###Unit Test for the Adaptive randomization code
+### Unit Test for the Adaptive randomization code
 The DotNetDETUnitTests unit test project allows you to quickly randomize a bunch of subjects to see if the adaptive randomization routine is working properly.
 
-##DatabasedNotify Endpoint
+## DatabasedNotify Endpoint
 Performs two actions based on the value of the *cityField* field:
  1. Adds form to appropriate data access group (DAG) based on city.
  2. Notifies appropriate contact at the site for that city.
@@ -59,7 +62,7 @@ Performs two actions based on the value of the *cityField* field:
 Note: The *DatabasedNotifyEmailsTestMode* config setting of true diverts all emails to 
 test recipient. Need to set to false when in production.
 
-##Common Code
+## Common Code
 The common code under the Infrastructure folder consists of the following classes:
  1. **RedCapDETBModelBinder.cs** is used to parse the posted values passed to the DET by REDCap. 
  2. **RedCapAccess.cs** contains routines to read and write records to REDCap. The REDCap API code was adapted from the work of [Chris Nefcy](https://github.com/redcap-tools/nef-c-sharp).
