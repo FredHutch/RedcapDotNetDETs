@@ -11,7 +11,7 @@ A Microsoft .NET-based implementation of a set of [REDCap](https://projectredcap
 - Extensive comments in source code.
 
 ### Update History
-- See versions in GitHub.
+- See GitHub releases.
 
 ### This solution contains two projects
 - **DotNetDETs** - This is the main project containing three WebAPI endpoints: 
