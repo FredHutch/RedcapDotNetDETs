@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Web.Http.ModelBinding;
 using System.Web.Http.Controllers;
 using log4net;
+using System.Linq;
 
 namespace DotNetDETs.Infrastructure
 {
@@ -37,6 +38,16 @@ namespace DotNetDETs.Infrastructure
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        private string GetValueOrEmpty(NameValueCollection collection, string key)
+        {
+            string retValue = string.Empty;
+            if (collection.AllKeys.Contains(key))
+                retValue = collection[key].ToString();
+
+            Log.Debug($"redcapDet.{key}='{retValue}'");
+            return retValue;
+        }
+
         public bool BindModel(HttpActionContext actionContext, ModelBindingContext bindingContext)
         {
             // Grab the data from the post and then parse it into name-value pairs.
@@ -45,78 +56,23 @@ namespace DotNetDETs.Infrastructure
 
             RedcapDET redcapDet = new RedcapDET();
 
-            //for (int i = 0; i < controls.Count; i++)
-            //{
-            //    Log.DebugFormat("REDCap DET Post {0}:{1}:{2}", i, controls.GetKey(i), controls.Get(i));
-            //}
+            for (int i = 0; i < controls.Count; i++)
+            {
+                Log.DebugFormat("REDCap DET Post {0}:{1}:{2}", i, controls.GetKey(i), controls.Get(i));
+            }
 
             try
             {
-                // Grab the values of the fields and populate the RedcapDET object.
-                try
-                {
-                    redcapDet.project_id = controls["project_id"].ToString();
-                }
-                catch (Exception ex)
-                {
-                    Log.ErrorFormat("project_id model binder exception:{0}. Inner Exception:{1}", ex.Message, ex.InnerException.Message);
-                }
-                try
-                {
-                    redcapDet.record = controls["record"].ToString();
-                }
-                catch (Exception ex)
-                {
-                    Log.ErrorFormat("record model binder exception:{0}. Inner Exception:{1}", ex.Message, ex.InnerException.Message);
-                }
-                try
-                {
-                    redcapDet.redcap_event_name = controls["redcap_event_name"].ToString();
-                }
-                catch
-                {
-                    redcapDet.redcap_event_name = "";
-                }
-                try
-                {
-                    redcapDet.redcap_repeat_instrument = controls["redcap_repeat_instrument"].ToString();
-                }
-                catch
-                {
-                    redcapDet.redcap_repeat_instrument = "";
-                }
-                try
-                {
-                    redcapDet.redcap_repeat_instance = controls["redcap_repeat_instance"].ToString();
-                }
-                catch
-                {
-                    redcapDet.redcap_repeat_instance = "";
-                }
-                try
-                {
-                    redcapDet.redcap_data_access_group = controls["redcap_data_access_group"].ToString();
-                }
-                catch
-                {
-                    redcapDet.redcap_data_access_group = "";
-                }
-                try
-                {
-                    redcapDet.instrument = controls["instrument"].ToString();
-                }
-                catch (Exception ex)
-                {
-                    Log.ErrorFormat("instrument model binder exception:{0}. Inner Exception:{1}", ex.Message, ex.InnerException.Message);
-                }
-                try
-                {
-                    redcapDet.complete_flag = controls[redcapDet.instrument + "_complete"].ToString();
-                }
-                catch (Exception ex)
-                {
-                    Log.ErrorFormat("instrument complete model binder exception:{0}. Inner Exception:{1}", ex.Message, ex.InnerException.Message);
-                }
+                redcapDet.project_id = GetValueOrEmpty(controls, nameof(redcapDet.project_id));
+                redcapDet.record = GetValueOrEmpty(controls, nameof(redcapDet.record));
+                redcapDet.redcap_event_name = GetValueOrEmpty(controls, nameof(redcapDet.redcap_event_name));
+                redcapDet.redcap_repeat_instrument = GetValueOrEmpty(controls, nameof(redcapDet.redcap_repeat_instrument));
+                redcapDet.redcap_repeat_instance = GetValueOrEmpty(controls, nameof(redcapDet.redcap_repeat_instance));
+                redcapDet.redcap_data_access_group = GetValueOrEmpty(controls, nameof(redcapDet.redcap_data_access_group));
+                redcapDet.instrument = GetValueOrEmpty(controls, nameof(redcapDet.instrument));
+                redcapDet.complete_flag = GetValueOrEmpty(controls, $"{redcapDet.instrument}_complete");
+
+                Log.Debug($"That last item is actually named... redcapDet.complete_flag='{redcapDet.complete_flag}'");
             }
             catch (Exception ex)
             {
