@@ -15,9 +15,9 @@ A Microsoft .NET-based implementation of a set of [REDCap](https://projectredcap
 
 ### This solution contains two projects
 - **DotNetDETs** - This is the main project containing three WebAPI endpoints: 
- - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
- - **Adaptive** - a .NET data entry trigger that implements **Adaptive Randomization** in REDCap. Implemented using class  DotNetDETs/Controllers/AdaptiveController.cs.
- - **DatabasedNotify** - a .NET data entry trigger that reacts to a saved survey and then, based on the value
+  - **DETExample** - a basic example of a .NET data entry trigger. Implemented using class  DotNetDETs/Controllers/DETExampleController.cs.
+  - **Adaptive** - a .NET data entry trigger that implements **Adaptive Randomization** in REDCap. Implemented using class  DotNetDETs/Controllers/AdaptiveController.cs.
+  - **DatabasedNotify** - a .NET data entry trigger that reacts to a saved survey and then, based on the value
 of a field on the survey, adds the record to the appropriate data access group and emails the
 appropriate site contact.
 - **DotNetDETUnitTests** - This is a unit test project for testing the Adaptive Randomization code.
